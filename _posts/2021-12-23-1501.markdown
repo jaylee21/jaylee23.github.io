@@ -15,6 +15,9 @@ In this project, our group **aimed to develop a predictive model** that utilizes
 
 * **Analyses Performed:** Web Scrapping, Data Cleaning/Manipulation, Keyword Extraction, Text Representation(Tokenization, Lemmatization, Vectorization), Machine Learning(Naive Bayes, Logistic Regression, Random Forest, SVC, Neural Network), Deep Learning(Recurrent Neural Network), Validation(Confusion Matrix), and Business Insights
 
+## Executive Summary
+* 
+
 ## Introduction
 
 Craigslist is an online platform connecting buyers to sellers. It heavily depends on users returning to its website to increase engagement. Thus, it would be in their best interest to maximize the number of users on their website, or increase the amount of time users spend on Craigslist. An effective way of improving users’ time on a page is by improving their experience. For this project, we decided to focus on user experience in the video gaming section. 
