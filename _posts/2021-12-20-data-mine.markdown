@@ -1,0 +1,90 @@
+---
+layout: post
+title:  Data Mining with Credit Default Data
+date:   2018-11-12 15:01:35 +0300
+image:  '/images/03.jpg'
+tags:   [SAS EM, SEMMA, Data Mining]
+---
+
+
+## Summary
+
+In this class project, our group **aimed to develop a predictive model** that utilizes historical payment status and certain demographic information to evaluate the likelihood of credit default.
+
+* **Tools / Libraries used:** SAS Enterprise Miner
+
+* **Analyses Performed:** EDA, Data Cleaning(mainly filtering outliers and transformation of predictors), Machine Learning, and Evaluation
+
+## Key Takeaways
+* We initially assumed that filtering out or replacing outliers would always generate better results. However, outliers could sometimes help models fit datasets when sizes of dataset are not sufficient.
+* The transformation nodes contributed significantly to models' performances. 
+* In the further analysis, I would like to perform the same analysis based on python. Although SAS EM is easier to use, python provides a lot more flexibility and possibility yields better results. 
+
+
+
+
+## EDA
+
+##### Setting Data Types and Roles
+
+After importing the dataset into SAS EM, we set each predictor's data type and role. Doing this step correctly is crucial since it decides how the program will use each predictor in analysis processes and yield different prediction results.
+
+* Default variable: since this is the variable that we would predict, we set its role as "target." This variable is binary, so we changed its type to "binary."
+* Education variable: since this predictor indicates the education levels, we set its type to "ordinal."
+* Marriage and Sex variables: these variables are set to nominal variables since they contain categorical data without orders. 
+
+<img src="../images/2021-12-20-second/Screen Shot 2021-12-21 at 10.02.28 PM.png" alt="Screen Shot 2021-12-21 at 10.02.28 PM" style="zoom:40%;" />
+
+
+
+##### EDA
+
+Then we checked the brief statistics to understand each predictor's characteristics better. Mainly, we observed statistical(location, deviation, variable worth, chi-square, etc.) and graphic patterns(histograms) for each predictor. The key patterns that we discovered are the following. 
+
+Please note that only the analyses that can help the model's predictability are covered, not the traditional EDA, where we focus more on finding patterns in the data. 
+
+* Out of 19 interval variables, 12 variables are highly skewed. Correcting skewness via transformation in variables can improve the fit of models to the data.
+
+<img src="../images/2021-12-20-second/image-20211221225449699.png" alt="image-20211221225449699" style="zoom:40%;" />
+
+* The proportion of the target variables is highly imbalanced as machine learning models tend to generate results in favor of a class with a higher proportion than the other; upsampling or downsampling may improve the models' predictability. 
+
+  <img src="../images/2021-12-20-second/Screen Shot 2021-12-21 at 11.00.43 PM.png" alt="Screen Shot 2021-12-21 at 11.00.43 PM" style="zoom:30%;" />
+
+* Lastly, outliers will be removed, replaced with other values, or left unchanged based on models' performance.
+
+* There is not any variable with missing values. 
+
+
+
+## Data Cleaning
+
+* **Filtering outliers:** Filtering out outliers can be performed through the filter node. Filtering interval variables can be done based on a few different methods, such as Median Absolute Deviation, which eliminates values outside Median +- n x MAD (EM default n = 9), and Standard Deviation method, which removes values outside Mean +- n x SD (EM default n = 3).
+
+* **Transformation:** Transformation can be done through the transformation node. There are various methods, but the best power transformation tried different methods and chose the one that has the best results for the specific criterion(e.g., R-square). Therefore, we used the best transformation method for our final model. 
+
+
+
+## Models Selection and Evaluation
+
+* **Data Partition:** Before building models, we used the validation set error approach as our evaluation metrics. We split the dataset into training (60%) and validation (40%) dataset with the data partition node. 
+* **Running all possible models:** We tried to run all the models with the transformation method and compared the result based on ASE. However, when we tested the filter node, we realized that excluding outliers only harmed the prediction after comparing various models' prediction performance with different filter methods. It generated the same result when we replaced the outliers with other methods with the replacement node. This is because the outliers are even helpful for the performance due to the relatively small size of the dataset. Therefore, we decided to keep those outliers. Then we selected the top 3 models with the lowest ASEs. They are Gradient Boosting, HP Neural, and Auto Neural.
+
+<img src="../images/2021-12-20-second/image-20211223221017720.png" alt="image-20211223221017720" style="zoom:50%;" />
+
+
+
+* **Parameter tuning of the top 3 models:** We performed parameter tuning for each model to get better prediction results.
+
+  * **Gradient Boosting:** The default number of iteration and shrinkage values were 50 and 0.1, respectively. Since this model fit a decision tree to the results from previous trees, the higher number of iteration may help reduce the residuals and increase the prediction rate. However, a too large value for this iteration may cause an overfitting issue. Thus, we changed the shrinkage parameter, which controls the learning rate. When using a large number of iteration, a smaller shrinkage parameter may generate better performance. We found that the optimal number of iteration and shrinkage values were 500 and 0.1, respectively.
+  * **Neural Network:** We tried different numbers of layers, neurons, and architectures for HP Neural and Auto Neural nodes. We had to carefully select the optimal parameters here since too many layers and neurons may overfit the data, generating too many parameters. 
+
+  <img src="../images/2021-12-20-second/image-20211223223559217.png" alt="image-20211223223559217" style="zoom:50%;" /><img src="../images/2021-12-20-second/image-20211223223607447.png" alt="image-20211223223607447" style="zoom:50%;" /><img src="../images/2021-12-20-second/image-20211223223621201.png" alt="image-20211223223621201" style="zoom:50%;" />
+
+  
+
+* **Selection of a Final Model:** After identifying the best combination of nodes for each model, we accomplished even better results by ensembling these three models. 
+
+
+
+

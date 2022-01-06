@@ -2,21 +2,23 @@
   
     {
       "title"    : "Text Classification of Postings in Video Gaming Category",
-      "article"  : "<div class='article col col-4 col-d-6 col-t-12 animate'> <div class='article__inner'>  <div class='image-wrap'> <a class='article__image' href='/1501'> <img src='/images/02.jpg' alt='Text Classification of Postings in Video Gaming Category'> </a> </div>  <div class='article__content'> <h2 class='article__title'> <a href='/1501'>Text Classification of Postings in Video Gaming Category</a> </h2> <p class='article__excerpt'> Summary
+      "article"  : "<div class='article col col-4 col-d-6 col-t-12 animate'> <div class='article__inner'>  <div class='image-wrap'> <a class='article__image' href='/text-class'> <img src='/images/02.jpg' alt='Text Classification of Postings in Video Gaming Category'> </a> </div>  <div class='article__content'> <h2 class='article__title'> <a href='/text-class'>Text Classification of Postings in Video Gaming Category</a> </h2> <p class='article__excerpt'> Summary
 
 In this project, our group aimed to develop a classification model that correctly classfies each posting in the v... </p> <div class='article__meta'> <a href='/about/' class='article__author-link'>Jay Lee</a> <span class='article__date'><time datetime='2021-12-23T21:01:35+09:00'>23 Dec 2021</time></span>  <div class='article-tags__box'>  <a href='/tag/python' class='article__tag'>python</a>  <a href='/tag/sklearn' class='article__tag'>sklearn</a>  <a href='/tag/keras' class='article__tag'>keras</a>  <a href='/tag/nlp' class='article__tag'>nlp</a>  </div>  </div> </div> </div> </div>",
       "category" : "",
       "tags"     : "python, sklearn, keras, and nlp",
-      "url"      : "/1501",
+      "url"      : "/text-class",
       "date"     : "2021-12-23 21:01:35 +0900"
     } ,
   
     {
-      "title"    : "Do what you can, with what you have, where you are",
-      "article"  : "<div class='article col col-4 col-d-6 col-t-12 animate'> <div class='article__inner'>  <div class='image-wrap'> <a class='article__image' href='/do-what-you-can-with-what-you-have-where-you-are'> <img src='/images/03.jpg' alt='Do what you can, with what you have, where you are'> </a> </div>  <div class='article__content'> <h2 class='article__title'> <a href='/do-what-you-can-with-what-you-have-where-you-are'>Do what you can, with what you have, where you are</a> </h2> <p class='article__excerpt'> Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu ita posuisti, et verba vestra sunt. Idemne... </p> <div class='article__meta'> <a href='/about/' class='article__author-link'>Jay Lee</a> <span class='article__date'><time datetime='2018-11-12T21:01:35+09:00'>12 Nov 2018</time></span>  <div class='article-tags__box'>  <a href='/tag/Art' class='article__tag'>Art</a>  <a href='/tag/Culture' class='article__tag'>Culture</a>  </div>  </div> </div> </div> </div>",
+      "title"    : "Data Mining with Credit Default Data",
+      "article"  : "<div class='article col col-4 col-d-6 col-t-12 animate'> <div class='article__inner'>  <div class='image-wrap'> <a class='article__image' href='/data-mine'> <img src='/images/03.jpg' alt='Data Mining with Credit Default Data'> </a> </div>  <div class='article__content'> <h2 class='article__title'> <a href='/data-mine'>Data Mining with Credit Default Data</a> </h2> <p class='article__excerpt'> Summary
+
+In this class project, our group aimed to develop a predictive model that utilizes historical payment status and ... </p> <div class='article__meta'> <a href='/about/' class='article__author-link'>Jay Lee</a> <span class='article__date'><time datetime='2018-11-12T21:01:35+09:00'>12 Nov 2018</time></span>  <div class='article-tags__box'>  <a href='/tag/SAS EM' class='article__tag'>SAS EM</a>  <a href='/tag/SEMMA' class='article__tag'>SEMMA</a>  <a href='/tag/Data Mining' class='article__tag'>Data Mining</a>  </div>  </div> </div> </div> </div>",
       "category" : "",
-      "tags"     : "Art and Culture",
-      "url"      : "/do-what-you-can-with-what-you-have-where-you-are",
+      "tags"     : "SAS EM, SEMMA, and Data Mining",
+      "url"      : "/data-mine",
       "date"     : "2018-11-12 21:01:35 +0900"
     } ,
   
