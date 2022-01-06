@@ -2,8 +2,8 @@
 layout: post
 title:  Text Classification of Postings in Video Gaming Category
 date:   2021-12-23 15:01:35 +0300
-image:  '/images/02.jpg'
-tags:   [python, sklearn, keras, nlp]
+image:  '/images/2021-12-23-text-class/2021-12-23-main.jpg'
+tags:   [Python, Sklearn, Keras, NLP]
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title:  Data Mining with Credit Default Data
 date:   2021-12-20 22:17:39 +0300
-image:  '/images/03.jpg'
+image:  '/images/2021-12-20-second/2021-12-20-main.jpg'
 tags:   [SAS EM, SEMMA, Data Mining]
 ---
 
