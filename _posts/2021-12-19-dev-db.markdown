@@ -8,19 +8,23 @@ tags:   [Database, SQL, KPI]
 
 ## Summary
 
-In this class project, our group **aimed to develop a classification model** that correctly classfies each posting in the video gaming category in Craiglist into a corresponding brand to enhance user experience and the company's key business performance. 
+California University Silicon Valley is an accredited private university that offers master program for students who want to become licensed acupuncturists. The students must complete 143 credit, or average of 3.5 years, and 960 hours of internship to be eligible for the certificate examination. Our client wants to manage key metrics which are certificate exam pass rate, enrollment rate, student managment effectively. However, its lack of IT capacity leads to high time consumption and low accuracy in decisions they make. **Our goal is to build effective database management system and SQL queries that accomplish its business objectives.**
 
 * **Tools / Libraries used:** SQL
 
-* **Dataset:** Acquired from client / student(name, grade,) and course information
+* **Dataset:** Acquired from client / student(name, grade, etc.) and course information
 
 * **Analyses Performed:** Business Requirement Analysis, ERD, Relational Schema, Data Cleaning, Database Normalization
 
 ## Key Takeaways
-* Our best model was gradient boosting, performed 81% accuracy in the test dataset. It was greater than the website's search rate which was 68%.
-* It shows that our best model would provide more correct results and minimize information loss on the searches that users performed on the website.
-* Therfore, we would expect that our model would contribute to an increase engagement of users with the webiste, leading to growth in retention rate and potentially generating more revenue.
-* During the data cleaning process, we were successfully able to categorize each sample into a corresponding brand by using the scoring method. We scored each sample with keywords that were manually extracted and identified the highest score to match with a correct brand. We believe this scoring method would be very effective and scalable for categorization in further analyses.
+* Performing business flow analysis allowed us kinds of data to collect from our client. The data that we requested are: visitor data(time visited, name), students data, course data, and exam pass data. 
+* Then we built ERD and relational schemas (see below). Next, we performed data cleansing. We removed data redundancy, change data format for consistency, and normalized from 0NF to 3NF. 
+* Then we uploaded the table into SQL and performed analysis. Please see **5. Business Insights and Recommendations** below for detail.
+    - The current pass rate is 74% and enrollment rate is 7%.
+    - Students who visited have an average GPA of 3.74, whereas students who did not have an average of 3.31. 
+    - Categories of courses have widely different average grades.
+    - 13% of the students are at risk of not completing the program. 
+* With our analysis, we expected the company to have positive short-term and long-term effective. In a short term, the company would be able to reduce the cost in human expenditure by 45% and increase efficiency by 88%. Moreover, in a long run, the company would be able to enhance the education quality, ultimately leading to positive effectives in its KPIs. 
 
 <br>
 
@@ -36,7 +40,7 @@ Also, as a private school, CUSV must report its enrolment and pass statistics to
 
 Therefore, we focus on their business scenario from the registration department to certification information including students, courses, instructors, certificates, etc. Try to develop a comprehensive database system that can truly help them examine metrics efficiently.
 <div style='text-align:center'>
-<h5>[Company Website]</h5>
+<h5>[University Website]</h5>
 </div>
 <div style="text-align:center;">
 <img src="../images/2021-12-19-dev-db/2021-12-19-00.jpg" alt="2021-12-19-00.jpg" style="zoom:70%;" class="center" />
@@ -165,4 +169,21 @@ Purpose of Queries:  The purpose of using query is to manage students efficientl
 </div>
 
 <br>
+
 ##### 5. Business Insights and Recommendations
+##### [Exam]
+* The current certificate pass rate is 74%, including the students who took the exam multiple times. The university needs to store data of students with different number of exam taken separately.
+* At least a quarter of the students take the exam several times.
+* Those who fail the exam tend to have lower grades. Current students with a GPA lower than 3.27 should be taken care of.
+    - Pass: 3.35 | Fail: 3.27
+* Pass rates tend to be different based on exam sites. However, because of the small number of samples, this number may have been distorted. Nevertheless, the university should keep track of this metrics so that it can help the students benefit.
+
+##### [Enrollment]
+* The current enrollment rate is 7%.
+* Students who visited have an average GPA of 3.74, whereas students who did not have an average GPA of 3.31. It is because of the consulting service that the university provides to students who visit the university. The university should have more students to go through the visiting stage.
+
+##### [Student Management]
+* Categories of courses have widely differing average grades.
+    - Medical Theory: 2.9 | Patient Assessment: 3.6
+* We were able to identify students who are at risk of not completing the program.
+    - Below C rate: 13% or 4 students

@@ -231,14 +231,14 @@
     <div class="post__content">
       <h2 id="summary">Summary</h2>
 
-<p>In this class project, our group <strong>aimed to develop a classification model</strong> that correctly classfies each posting in the video gaming category in Craiglist into a corresponding brand to enhance user experience and the company’s key business performance.</p>
+<p>California University Silicon Valley is an accredited private university that offers master program for students who want to become licensed acupuncturists. The students must complete 143 credit, or average of 3.5 years, and 960 hours of internship to be eligible for the certificate examination. Our client wants to manage key metrics which are certificate exam pass rate, enrollment rate, student managment effectively. However, its lack of IT capacity leads to high time consumption and low accuracy in decisions they make. <strong>Our goal is to build effective database management system and SQL queries that accomplish its business objectives.</strong></p>
 
 <ul>
   <li>
     <p><strong>Tools / Libraries used:</strong> SQL</p>
   </li>
   <li>
-    <p><strong>Dataset:</strong> Acquired from client / student(name, grade,) and course information</p>
+    <p><strong>Dataset:</strong> Acquired from client / student(name, grade, etc.) and course information</p>
   </li>
   <li>
     <p><strong>Analyses Performed:</strong> Business Requirement Analysis, ERD, Relational Schema, Data Cleaning, Database Normalization</p>
@@ -247,10 +247,17 @@
 
 <h2 id="key-takeaways">Key Takeaways</h2>
 <ul>
-  <li>Our best model was gradient boosting, performed 81% accuracy in the test dataset. It was greater than the website’s search rate which was 68%.</li>
-  <li>It shows that our best model would provide more correct results and minimize information loss on the searches that users performed on the website.</li>
-  <li>Therfore, we would expect that our model would contribute to an increase engagement of users with the webiste, leading to growth in retention rate and potentially generating more revenue.</li>
-  <li>During the data cleaning process, we were successfully able to categorize each sample into a corresponding brand by using the scoring method. We scored each sample with keywords that were manually extracted and identified the highest score to match with a correct brand. We believe this scoring method would be very effective and scalable for categorization in further analyses.</li>
+  <li>Performing business flow analysis allowed us kinds of data to collect from our client. The data that we requested are: visitor data(time visited, name), students data, course data, and exam pass data.</li>
+  <li>Then we built ERD and relational schemas (see below). Next, we performed data cleansing. We removed data redundancy, change data format for consistency, and normalized from 0NF to 3NF.</li>
+  <li>Then we uploaded the table into SQL and performed analysis. Please see <strong>5. Business Insights and Recommendations</strong> below for detail.
+    <ul>
+      <li>The current pass rate is 74% and enrollment rate is 7%.</li>
+      <li>Students who visited have an average GPA of 3.74, whereas students who did not have an average of 3.31.</li>
+      <li>Categories of courses have widely different average grades.</li>
+      <li>13% of the students are at risk of not completing the program.</li>
+    </ul>
+  </li>
+  <li>With our analysis, we expected the company to have positive short-term and long-term effective. In a short term, the company would be able to reduce the cost in human expenditure by 45% and increase efficiency by 88%. Moreover, in a long run, the company would be able to enhance the education quality, ultimately leading to positive effectives in its KPIs.</li>
 </ul>
 
 <p><br /></p>
@@ -266,7 +273,7 @@
 
 <p>Therefore, we focus on their business scenario from the registration department to certification information including students, courses, instructors, certificates, etc. Try to develop a comprehensive database system that can truly help them examine metrics efficiently.</p>
 <div style="text-align:center">
-<h5>[Company Website]</h5>
+<h5>[University Website]</h5>
 </div>
 <div style="text-align:center;">
 <img src="../images/2021-12-19-dev-db/2021-12-19-00.jpg" alt="2021-12-19-00.jpg" style="zoom:70%;" class="center" />
@@ -419,7 +426,57 @@ The database system can at the same time work well as the student management sys
 </div>
 
 <p><br /></p>
+
 <h5 id="5-business-insights-and-recommendations">5. Business Insights and Recommendations</h5>
+<h5 id="exam">[Exam]</h5>
+<ul>
+  <li>The current certificate pass rate is 74%, including the students who took the exam multiple times. The university needs to store data of students with different number of exam taken separately.</li>
+  <li>At least a quarter of the students take the exam several times.</li>
+  <li>Those who fail the exam tend to have lower grades. Current students with a GPA lower than 3.27 should be taken care of.
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Pass: 3.35</td>
+              <td>Fail: 3.27</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>Pass rates tend to be different based on exam sites. However, because of the small number of samples, this number may have been distorted. Nevertheless, the university should keep track of this metrics so that it can help the students benefit.</li>
+</ul>
+
+<h5 id="enrollment">[Enrollment]</h5>
+<ul>
+  <li>The current enrollment rate is 7%.</li>
+  <li>Students who visited have an average GPA of 3.74, whereas students who did not have an average GPA of 3.31. It is because of the consulting service that the university provides to students who visit the university. The university should have more students to go through the visiting stage.</li>
+</ul>
+
+<h5 id="student-management">[Student Management]</h5>
+<ul>
+  <li>Categories of courses have widely differing average grades.
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Medical Theory: 2.9</td>
+              <td>Patient Assessment: 3.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>We were able to identify students who are at risk of not completing the program.
+    <ul>
+      <li>Below C rate: 13% or 4 students</li>
+    </ul>
+  </li>
+</ul>
 
     </div>
 
