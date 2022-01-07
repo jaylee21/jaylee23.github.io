@@ -9,7 +9,7 @@ tags:   [Python, Sklearn, Keras, NLP]
 
 ## Summary
 
-In this class project, our group **aimed to develop a classification model** that correctly classfies each posting in the video gaming category in Craiglist into a corresponding brand to enhance user experience and the company's key business performance. 
+In this class project, our group **aimed to develop a classification model** that correctly classifies each posting in the video gaming category in Craigslist into a corresponding brand to enhance user experience and the company's key business performance. 
 
 * **Tools / Libraries used:** Python (beautiful soup, pandas, nltk, sklearn, keras, etc.)
 
